@@ -5,15 +5,15 @@
   "provenance": {
     "base": "05c800f40d1ad53b42a78609d2667ef4f726808b",
     "planningHead": "0a91273e61dbbd47eb0af4c02844409251e08398",
-    "head": "e47304859b5f896367b4085cee572d3c1e318142",
-    "sourceSha256": "b20bef8db0412eba24c4092bb326e64082567fdda6c950a879b71167d3e70e02",
+    "head": "4bdbfd2613d4ad4de8a56e9a3a20fc2b5c839141",
+    "sourceSha256": "9d38d91b97390d9f2520eea3e6572c7cb2b733bd640c95cdea9ee1cce33ddcf8",
     "generatedAt": null,
     "generator": "scripts/generate-inventory-graph.mjs"
   },
   "base": "05c800f40d1ad53b42a78609d2667ef4f726808b",
   "planningHead": "0a91273e61dbbd47eb0af4c02844409251e08398",
-  "head": "e47304859b5f896367b4085cee572d3c1e318142",
-  "sourceSha256": "b20bef8db0412eba24c4092bb326e64082567fdda6c950a879b71167d3e70e02",
+  "head": "4bdbfd2613d4ad4de8a56e9a3a20fc2b5c839141",
+  "sourceSha256": "9d38d91b97390d9f2520eea3e6572c7cb2b733bd640c95cdea9ee1cce33ddcf8",
   "counts": {
     "public": {
       "skills": 48,
@@ -28,8 +28,8 @@
       "toolFiles": 65,
       "libFiles": 48,
       "templateHooks": 24,
-      "srcFiles": 1479,
-      "total": 1503
+      "srcFiles": 1480,
+      "total": 1504
     },
     "generated": {
       "distFiles": 5739,
@@ -37,14 +37,14 @@
       "total": 5748
     },
     "prompt": {
-      "promptLikeFiles": 61
+      "promptLikeFiles": 62
     },
     "skills": 48,
     "commands": 21,
     "hookFiles": 335,
     "workflows": 8,
     "agentDefinitions": 18,
-    "promptLikeFiles": 61
+    "promptLikeFiles": 62
   },
   "public": {
     "skills": [
@@ -780,6 +780,7 @@
       "src/mcp/prompt-injection.ts",
       "src/mcp/prompt-persistence.ts",
       "src/ralphthon/deep-interview-prompt.ts",
+      "src/team/__tests__/pane-trust-prompt-kind.test.ts",
       "src/team/__tests__/prompt-sanitization.test.ts",
       "templates/hooks/lib/workflow-stage-prompts.mjs",
       "tests/fixtures/prompt-projection/README.md",
@@ -7072,6 +7073,7 @@
       "src/mcp/prompt-injection.ts",
       "src/mcp/prompt-persistence.ts",
       "src/ralphthon/deep-interview-prompt.ts",
+      "src/team/__tests__/pane-trust-prompt-kind.test.ts",
       "src/team/__tests__/prompt-sanitization.test.ts",
       "templates/hooks/lib/workflow-stage-prompts.mjs",
       "tests/fixtures/prompt-projection/README.md",
@@ -44900,6 +44902,11 @@
         "path": "src/team/__tests__/outbox-reader.test.ts"
       },
       {
+        "id": "src/team/__tests__/pane-trust-prompt-kind.test.ts",
+        "kind": "src",
+        "path": "src/team/__tests__/pane-trust-prompt-kind.test.ts"
+      },
+      {
         "id": "src/team/__tests__/permissions.test.ts",
         "kind": "src",
         "path": "src/team/__tests__/permissions.test.ts"
@@ -79627,6 +79634,26 @@
         "kind": "imports"
       },
       {
+        "from": "src/team/__tests__/pane-trust-prompt-kind.test.ts",
+        "to": "external:vitest",
+        "kind": "imports"
+      },
+      {
+        "from": "src/team/__tests__/pane-trust-prompt-kind.test.ts",
+        "to": "src/team/model-contract.ts",
+        "kind": "type-imports"
+      },
+      {
+        "from": "src/team/__tests__/pane-trust-prompt-kind.test.ts",
+        "to": "src/team/tmux-session.ts",
+        "kind": "imports"
+      },
+      {
+        "from": "src/team/__tests__/pane-trust-prompt-kind.test.ts",
+        "to": "src/team/tmux-session.ts",
+        "kind": "type-imports"
+      },
+      {
         "from": "src/team/__tests__/permissions.test.ts",
         "to": "external:vitest",
         "kind": "imports"
@@ -89753,12 +89780,12 @@
       }
     ],
     "stats": {
-      "nodeCount": 7886,
-      "edgeCount": 8616,
-      "importEdgeCount": 7175,
+      "nodeCount": 7887,
+      "edgeCount": 8620,
+      "importEdgeCount": 7177,
       "registerEdgeCount": 69
     }
   },
-  "inventorySha256": "90005b8fd59d366d462088faf329f8fdb3042d94c6a906daaedb7fe185aadbf9",
-  "manifestSha256": "9d58796c343d8ff6761a7cf3e6d15a635fba01f0181c6dfeb8af37ad18fa614b"
+  "inventorySha256": "80eefbacad83b4daaa363aefb87df1c7d45439c49c4bf0f7fe6f509ccfb112b0",
+  "manifestSha256": "4f317bd425d2486b96faa6169601281d74f75a69bc7af686f1fe3b27852dd316"
 }
