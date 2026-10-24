@@ -1,3 +1,22 @@
+# oh-my-claudecode v5.7.14: More reliable Stop hooks and leaner team handling
+
+## Release Notes
+
+This release fixes Stop-hook shadow resolver cleanup and removes the unwired team-dispatch implementation. Thanks to @iyoda for #4581 and to @rolldav for reporting #4575.
+
+### Bug Fixes
+
+- **fix: detach shadow Jev resolver for Stop hooks** (#4580, fixes #4575; reported by @rolldav)
+
+### Other Changes
+
+- **chore(hooks): remove unwired team-dispatch hook and generated artifacts** (#4581, supersedes #4566; @iyoda)
+- **ci: authorize generated artifacts for the team-dispatch removal** (#4577, #4582, #4587)
+- **chore(sync): merge the v5.7.13 main release into dev** (#4590)
+- **ci: authorize generated artifacts for the v5.7.13 main-to-dev sync** (#4591)
+
+---
+
 # oh-my-claudecode v5.7.13: More reliable keyword prompts and team handling
 
 ## Release Notes
