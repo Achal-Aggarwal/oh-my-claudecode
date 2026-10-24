@@ -5,15 +5,15 @@
   "provenance": {
     "base": "05c800f40d1ad53b42a78609d2667ef4f726808b",
     "planningHead": "0a91273e61dbbd47eb0af4c02844409251e08398",
-    "head": "5c6bc3c44b901adfb165e3e4adeba5dfbd484187",
-    "sourceSha256": "287857905784b61da49e06ff71b826d59ab9a482a3f85d3e93799eae6fe9a97a",
+    "head": "a9e2255c9209c4a23c77801cbbba8846218dcaa6",
+    "sourceSha256": "8c6ddb6203fa10d3ff804c5877d6d32d65c8abc7490a723f647663033e5ca858",
     "generatedAt": null,
     "generator": "scripts/generate-inventory-graph.mjs"
   },
   "base": "05c800f40d1ad53b42a78609d2667ef4f726808b",
   "planningHead": "0a91273e61dbbd47eb0af4c02844409251e08398",
-  "head": "5c6bc3c44b901adfb165e3e4adeba5dfbd484187",
-  "sourceSha256": "287857905784b61da49e06ff71b826d59ab9a482a3f85d3e93799eae6fe9a97a",
+  "head": "a9e2255c9209c4a23c77801cbbba8846218dcaa6",
+  "sourceSha256": "8c6ddb6203fa10d3ff804c5877d6d32d65c8abc7490a723f647663033e5ca858",
   "counts": {
     "public": {
       "skills": 48,
@@ -28,13 +28,13 @@
       "toolFiles": 65,
       "libFiles": 48,
       "templateHooks": 24,
-      "srcFiles": 1480,
-      "total": 1504
+      "srcFiles": 1484,
+      "total": 1508
     },
     "generated": {
-      "distFiles": 5739,
+      "distFiles": 5741,
       "bridgeFiles": 9,
-      "total": 5748
+      "total": 5750
     },
     "prompt": {
       "promptLikeFiles": 62
@@ -6624,6 +6624,8 @@
       "dist/utils/string-width.d.ts.map",
       "dist/utils/string-width.js",
       "dist/utils/string-width.js.map",
+      "dist/utils/url.d.ts",
+      "dist/utils/url.js",
       "dist/utils/user-skill-compat.d.ts",
       "dist/utils/user-skill-compat.d.ts.map",
       "dist/utils/user-skill-compat.js",
@@ -36702,6 +36704,16 @@
         "path": "dist/utils/string-width.js.map"
       },
       {
+        "id": "dist/utils/url.d.ts",
+        "kind": "generated-dist",
+        "path": "dist/utils/url.d.ts"
+      },
+      {
+        "id": "dist/utils/url.js",
+        "kind": "generated-dist",
+        "path": "dist/utils/url.js"
+      },
+      {
         "id": "dist/utils/user-skill-compat.d.ts",
         "kind": "generated-dist",
         "path": "dist/utils/user-skill-compat.d.ts"
@@ -44627,6 +44639,11 @@
         "path": "src/skills/__tests__/skill-config-dir.test.ts"
       },
       {
+        "id": "src/team/__tests__/ack-timeout-env.test.ts",
+        "kind": "src",
+        "path": "src/team/__tests__/ack-timeout-env.test.ts"
+      },
+      {
         "id": "src/team/__tests__/activity-log.test.ts",
         "kind": "src",
         "path": "src/team/__tests__/activity-log.test.ts"
@@ -44927,6 +44944,11 @@
         "path": "src/team/__tests__/prompt-sanitization.test.ts"
       },
       {
+        "id": "src/team/__tests__/ready-timeout-env.test.ts",
+        "kind": "src",
+        "path": "src/team/__tests__/ready-timeout-env.test.ts"
+      },
+      {
         "id": "src/team/__tests__/rebase-smoke.test.ts",
         "kind": "src",
         "path": "src/team/__tests__/rebase-smoke.test.ts"
@@ -45080,6 +45102,11 @@
         "id": "src/team/__tests__/shell-affinity.test.ts",
         "kind": "src",
         "path": "src/team/__tests__/shell-affinity.test.ts"
+      },
+      {
+        "id": "src/team/__tests__/shell-ready-timeout-env.test.ts",
+        "kind": "src",
+        "path": "src/team/__tests__/shell-ready-timeout-env.test.ts"
       },
       {
         "id": "src/team/__tests__/split-pane-cleanup-evidence.test.ts",
@@ -46180,6 +46207,11 @@
         "id": "src/utils/string-width.ts",
         "kind": "src",
         "path": "src/utils/string-width.ts"
+      },
+      {
+        "id": "src/utils/url.ts",
+        "kind": "src",
+        "path": "src/utils/url.ts"
       },
       {
         "id": "src/utils/user-skill-compat.ts",
@@ -72604,6 +72636,11 @@
         "kind": "type-imports"
       },
       {
+        "from": "src/hud/elements/git.ts",
+        "to": "src/utils/url.ts",
+        "kind": "imports"
+      },
+      {
         "from": "src/hud/elements/hostname.ts",
         "to": "external:node:os",
         "kind": "imports"
@@ -77774,6 +77811,11 @@
         "kind": "type-imports"
       },
       {
+        "from": "src/providers/index.ts",
+        "to": "src/utils/url.ts",
+        "kind": "imports"
+      },
+      {
         "from": "src/ralphthon/__tests__/cli.test.ts",
         "to": "external:vitest",
         "kind": "imports"
@@ -78041,6 +78083,36 @@
       {
         "from": "src/skills/__tests__/skill-config-dir.test.ts",
         "to": "external:vitest",
+        "kind": "imports"
+      },
+      {
+        "from": "src/team/__tests__/ack-timeout-env.test.ts",
+        "to": "external:node:crypto",
+        "kind": "imports"
+      },
+      {
+        "from": "src/team/__tests__/ack-timeout-env.test.ts",
+        "to": "external:node:fs/promises",
+        "kind": "imports"
+      },
+      {
+        "from": "src/team/__tests__/ack-timeout-env.test.ts",
+        "to": "external:node:os",
+        "kind": "imports"
+      },
+      {
+        "from": "src/team/__tests__/ack-timeout-env.test.ts",
+        "to": "external:node:path",
+        "kind": "imports"
+      },
+      {
+        "from": "src/team/__tests__/ack-timeout-env.test.ts",
+        "to": "external:vitest",
+        "kind": "imports"
+      },
+      {
+        "from": "src/team/__tests__/ack-timeout-env.test.ts",
+        "to": "src/team/worker-launch-ack.ts",
         "kind": "imports"
       },
       {
@@ -79724,6 +79796,16 @@
         "kind": "imports"
       },
       {
+        "from": "src/team/__tests__/ready-timeout-env.test.ts",
+        "to": "external:vitest",
+        "kind": "imports"
+      },
+      {
+        "from": "src/team/__tests__/ready-timeout-env.test.ts",
+        "to": "src/team/scaling.ts",
+        "kind": "imports"
+      },
+      {
         "from": "src/team/__tests__/rebase-smoke.test.ts",
         "to": "external:node:child_process",
         "kind": "imports"
@@ -81035,6 +81117,16 @@
       },
       {
         "from": "src/team/__tests__/shell-affinity.test.ts",
+        "to": "src/team/tmux-session.ts",
+        "kind": "imports"
+      },
+      {
+        "from": "src/team/__tests__/shell-ready-timeout-env.test.ts",
+        "to": "external:vitest",
+        "kind": "imports"
+      },
+      {
+        "from": "src/team/__tests__/shell-ready-timeout-env.test.ts",
         "to": "src/team/tmux-session.ts",
         "kind": "imports"
       },
@@ -89780,12 +89872,12 @@
       }
     ],
     "stats": {
-      "nodeCount": 7887,
-      "edgeCount": 8620,
-      "importEdgeCount": 7177,
+      "nodeCount": 7893,
+      "edgeCount": 8632,
+      "importEdgeCount": 7189,
       "registerEdgeCount": 69
     }
   },
-  "inventorySha256": "80eefbacad83b4daaa363aefb87df1c7d45439c49c4bf0f7fe6f509ccfb112b0",
-  "manifestSha256": "dd291bd7fec56f2fe7cac1161e835022eed40bc461fffb629fe1e61745500828"
+  "inventorySha256": "da20900b09d9f868d68f247aded219bd036f829d47eb0e2fd5ee8810e55838b5",
+  "manifestSha256": "d77a90bc092a9b7576593fd05e00ff6338bd11b1812137e84c041bda45843f29"
 }
