@@ -1,24 +1,35 @@
-# oh-my-claudecode v5.7.12: More reliable URL and timeout handling
+# oh-my-claudecode v5.7.13: More reliable keyword prompts and team handling
 
 ## Release Notes
 
-This release improves parsing of provider and issue URLs ending in slashes or sub-pages, hardens environment-based timeout handling, and preserves tmux pane IDs when session names contain spaces. Thanks to @rudycelekli for contributions to #4542, #4543, #4544, #4545, #4546, #4547, and #4549.
+This release preserves explicit keyword invocations in reference prompts, keeps help requests informational across more prompt shapes, and corrects team and notification environment handling. Thanks to @rudycelekli and @iyoda for their fixes, and to @rolldav for reporting #4550.
+
+### Highlights
+
+- **fix: preserve explicit keyword invocation in reference prompts** (#4551, fixes #4550; reported by @rolldav)
+- **fix(keyword-detector): keep leading help requests informational in two more shapes** (#4564)
+- **fix(team): point the pane-ready timeout hint at OMC_TEAM_READY_TIMEOUT_MS** (#4568)
 
 ### Bug Fixes
 
-- **fix(teleport): read PR and issue URLs with a trailing slash or sub-page** (#4542, @rudycelekli)
-- **fix(lsp): read whole-integer timeouts from the environment** (#4543, @rudycelekli)
-- **fix(rate-limit-wait): keep pane IDs for tmux sessions with spaces** (#4544, @rudycelekli)
-- **fix(team): read the shell-ready timeout as a whole integer** (#4545, @rudycelekli)
-- **fix(team): read launch-ack timeouts as whole integers** (#4546, @rudycelekli)
-- **fix(team): read the worker-ready timeout as a whole integer** (#4547, @rudycelekli)
-- **fix(providers): parse remote URLs that end in a slash** (#4549, @rudycelekli)
+- **fix: preserve explicit keyword invocation in reference prompts** (#4551, fixes #4550; reported by @rolldav)
+- **fix: resolve #4551 regressions in keyword-detector** (#4553)
+- **fix(keyword-detector): keep leading help requests informational in two more shapes** (#4564)
+- **fix(notifications): stop truncating OMC_NOTIFY_TMUX_TAIL_LINES** (#4556, @rudycelekli)
+- **fix(team-dispatch): stop truncating cooldown environment values** (#4557, @rudycelekli)
+- **fix(team): read the start-submit timeout as a whole integer** (#4558, @rudycelekli)
+- **fix(team): point the pane-ready timeout hint at OMC_TEAM_READY_TIMEOUT_MS** (#4568, @iyoda)
 
 ### Other Changes
 
-- **chore(sync): merge main's v5.7.11 release into dev** (#4540)
-- **ci: authorize generated artifacts for sync PR #4540** (#4541)
-- **ci: authorize generated artifacts for an earlier main-to-dev sync attempt** (#4539)
+- **test: stabilize concurrent workflow-profile stops** (#4561, fixes #4560)
+- **ci: authorize generated artifacts during an earlier v5.7.12 main-to-dev sync attempt** (#4563, #4565, #4567)
+- **chore(sync): merge the v5.7.12 main release into dev** (#4569)
+- **ci: authorize and refresh generated artifacts for the v5.7.12 main-to-dev sync** (#4570, #4573, #4574)
+
+### Stats
+
+- **15 merged PRs** | **7 bug fixes** | **8 other changes**
 
 ### Install / Update
 
@@ -27,7 +38,7 @@ The npm CLI and the Claude Code marketplace/plugin are separate install tracks, 
 **CLI / runtime:**
 
 ```bash
-npm install -g oh-my-claude-sisyphus@5.7.12
+npm install -g oh-my-claude-sisyphus@5.7.13
 ```
 
 **Claude Code plugin:**
@@ -36,10 +47,10 @@ npm install -g oh-my-claude-sisyphus@5.7.12
 /plugin marketplace update omc
 ```
 
-**Full Changelog**: https://github.com/Yeachan-Heo/oh-my-claudecode/compare/v5.7.11...v5.7.12
+**Full Changelog**: https://github.com/Yeachan-Heo/oh-my-claudecode/compare/v5.7.12...v5.7.13
 
 ## Contributors
 
 Thank you to all contributors who made this release possible!
 
-@rudycelekli @Yeachan-Heo
+@iyoda @rudycelekli @Yeachan-Heo
