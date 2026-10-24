@@ -1285,9 +1285,13 @@ async function verifyWorkerStartCommandDelivered(paneId, startCmd, tmuxServerIde
     }
     return false;
 }
-function resolvePositiveIntegerEnv(name, fallback) {
-    const value = Number.parseInt(process.env[name] ?? '', 10);
-    return Number.isFinite(value) && value > 0 ? value : fallback;
+export function resolveTeamStartSubmitTimeoutMs(env = process.env, explicitTimeoutMs) {
+    if (Number.isFinite(explicitTimeoutMs) && (explicitTimeoutMs ?? 0) > 0) {
+        return Number(explicitTimeoutMs);
+    }
+    const raw = env.OMC_TEAM_START_SUBMIT_TIMEOUT_MS;
+    const parsed = raw == null || String(raw).trim() === '' ? null : parseExactInteger(String(raw));
+    return parsed !== null && parsed > 0 ? parsed : 8_000;
 }
 async function verifyWorkerStartCommandSubmitted(paneId, startCmd, opts = {}) {
     if (isCmuxSurfaceTarget(paneId))
@@ -1296,9 +1300,7 @@ async function verifyWorkerStartCommandSubmitted(paneId, startCmd, opts = {}) {
         return false;
     const expected = normalizeTmuxCapture(startCmd);
     const compactExpected = normalizeTmuxCaptureForDelivery(startCmd);
-    const timeoutMs = Number.isFinite(opts.timeoutMs) && (opts.timeoutMs ?? 0) > 0
-        ? Number(opts.timeoutMs)
-        : resolvePositiveIntegerEnv('OMC_TEAM_START_SUBMIT_TIMEOUT_MS', 8_000);
+    const timeoutMs = resolveTeamStartSubmitTimeoutMs(process.env, opts.timeoutMs);
     const maxPollIntervalMs = Number.isFinite(opts.maxPollIntervalMs) && (opts.maxPollIntervalMs ?? 0) > 0
         ? Number(opts.maxPollIntervalMs)
         : 500;
@@ -2855,10 +2857,9 @@ export function paneLooksReady(captured, provider) {
 export async function waitForPaneReady(paneId, opts = {}) {
     if (!isCmuxSurfaceTarget(paneId) && !opts.tmuxServerIdentity)
         return false;
-    const envTimeout = Number.parseInt(process.env.OMC_SHELL_READY_TIMEOUT_MS ?? '', 10);
     const timeoutMs = Number.isFinite(opts.timeoutMs) && (opts.timeoutMs ?? 0) > 0
         ? Number(opts.timeoutMs)
-        : (Number.isFinite(envTimeout) && envTimeout > 0 ? envTimeout : 30_000);
+        : 30_000;
     const pollIntervalMs = Number.isFinite(opts.pollIntervalMs) && (opts.pollIntervalMs ?? 0) > 0
         ? Number(opts.pollIntervalMs)
         : 250;
@@ -2873,7 +2874,7 @@ export async function waitForPaneReady(paneId, opts = {}) {
         await sleep(pollIntervalMs);
     }
     console.warn(`[tmux-session] waitForPaneReady: pane ${paneId} timed out after ${timeoutMs}ms ` +
-        `(set OMC_SHELL_READY_TIMEOUT_MS to tune)`);
+        `(set OMC_TEAM_READY_TIMEOUT_MS to tune)`);
     return false;
 }
 function paneTailContainsLiteralLine(captured, text) {
