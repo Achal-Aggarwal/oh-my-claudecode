@@ -2782,9 +2782,6 @@ export function detectPaneTrustPromptKind(captured, provider) {
 export function paneHasTrustPrompt(captured, provider) {
     return detectPaneTrustPromptKind(captured, provider) !== null;
 }
-export function paneHasCursorWorkspaceTrustPrompt(captured) {
-    return detectPaneTrustPromptKind(captured, 'cursor') === 'cursor_workspace_trust';
-}
 function paneHasClaudeStartupBanner(captured, provider) {
     const lines = captured
         .split('\n')
