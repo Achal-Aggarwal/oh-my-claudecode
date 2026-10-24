@@ -34619,6 +34619,92 @@
           "previousFilename": null
         }
       ]
+    },
+    {
+      "pullNumber": 4593,
+      "targetRef": "main",
+      "mergeBaseSha": "f6f9d080b2d4333a02b9081d7f73e3c2f72844e0",
+      "headSha": "5354fe3e5f21e28541916c611027a7443e495e73",
+      "owner": "Yeachan-Heo",
+      "expiresAt": "2026-11-23T00:00:00.000Z",
+      "generatedDelta": {
+        "count": 12,
+        "sha256": "6ec29d52c773c9e9b992e07ef4cfa844c8124bb067bbc38019b388e1ed51baae"
+      },
+      "generatedFiles": [
+        {
+          "status": "removed",
+          "filename": "dist/hooks/__tests__/team-dispatch-cooldown.test.d.ts",
+          "sha": "fcb5adf2e4bbf42f507ff703c5aed44a8378f9ff",
+          "previousFilename": null
+        },
+        {
+          "status": "removed",
+          "filename": "dist/hooks/__tests__/team-dispatch-cooldown.test.d.ts.map",
+          "sha": "a5dfd1ee2272f685a7d038403a7ea022092bb5ae",
+          "previousFilename": null
+        },
+        {
+          "status": "removed",
+          "filename": "dist/hooks/__tests__/team-dispatch-cooldown.test.js",
+          "sha": "6de9eac96c5ed07e5b3992515296b6c461380cf6",
+          "previousFilename": null
+        },
+        {
+          "status": "removed",
+          "filename": "dist/hooks/__tests__/team-dispatch-cooldown.test.js.map",
+          "sha": "c5e5ec2494155029972060d0ed6793af5995e3d3",
+          "previousFilename": null
+        },
+        {
+          "status": "removed",
+          "filename": "dist/hooks/__tests__/team-dispatch-prompt-readiness.test.d.ts",
+          "sha": "3c48d14f97d38ccf6a319b6c087466f9cbc6169c",
+          "previousFilename": null
+        },
+        {
+          "status": "removed",
+          "filename": "dist/hooks/__tests__/team-dispatch-prompt-readiness.test.d.ts.map",
+          "sha": "b847714ae7b742705065eb52d56c1b6365a1a679",
+          "previousFilename": null
+        },
+        {
+          "status": "removed",
+          "filename": "dist/hooks/__tests__/team-dispatch-prompt-readiness.test.js",
+          "sha": "04c41c7d2a8386844cfc0c567042708d356abb71",
+          "previousFilename": null
+        },
+        {
+          "status": "removed",
+          "filename": "dist/hooks/__tests__/team-dispatch-prompt-readiness.test.js.map",
+          "sha": "69c22532e89668efa5624153328045bc840091fc",
+          "previousFilename": null
+        },
+        {
+          "status": "removed",
+          "filename": "dist/hooks/team-dispatch-hook.d.ts",
+          "sha": "c5c864abc1cd229f7ab61a67696ee6b59d3719db",
+          "previousFilename": null
+        },
+        {
+          "status": "removed",
+          "filename": "dist/hooks/team-dispatch-hook.d.ts.map",
+          "sha": "040f8b5ad593c67d2b19d78ecbd8815bf5771696",
+          "previousFilename": null
+        },
+        {
+          "status": "removed",
+          "filename": "dist/hooks/team-dispatch-hook.js",
+          "sha": "303f9426ce1482a6f876063ce22ce8dd379cc385",
+          "previousFilename": null
+        },
+        {
+          "status": "removed",
+          "filename": "dist/hooks/team-dispatch-hook.js.map",
+          "sha": "bf66de2c69a281ee7ddcf367789fd2a0e2d0281e",
+          "previousFilename": null
+        }
+      ]
     }
   ]
 }
