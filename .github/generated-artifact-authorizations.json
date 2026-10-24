@@ -35261,6 +35261,148 @@
           "previousFilename": null
         }
       ]
+    },
+    {
+      "pullNumber": 4583,
+      "targetRef": "main",
+      "mergeBaseSha": "102696d721dbabfe0e5e455c48c1f09d48044d42",
+      "headSha": "649d2061b6b245adbacc904d578962a561a2b6ed",
+      "owner": "Yeachan-Heo",
+      "expiresAt": "2026-11-20T00:00:00.000Z",
+      "generatedDelta": {
+        "count": 10,
+        "sha256": "3445370ba8f33549b91926184bd0d804ef5009ebd8896dbdc88c0de9089fa6ab"
+      },
+      "generatedFiles": [
+        {
+          "status": "modified",
+          "filename": "bridge/claude-md-coordinator.cjs",
+          "sha": "52c369d22676db3ab651fbf92e73d9b7ee76556c",
+          "previousFilename": null
+        },
+        {
+          "status": "modified",
+          "filename": "bridge/cli.cjs",
+          "sha": "84b8efea4cc693745cc29805d71f71473dead444",
+          "previousFilename": null
+        },
+        {
+          "status": "modified",
+          "filename": "bridge/runtime-cli.cjs",
+          "sha": "09982acb12f2a137c9627a5328af54ea72b9a8fa",
+          "previousFilename": null
+        },
+        {
+          "status": "modified",
+          "filename": "bridge/team-mcp.cjs",
+          "sha": "d25dd3db30936c112923bb24072cb3c4fb95ecd7",
+          "previousFilename": null
+        },
+        {
+          "status": "modified",
+          "filename": "bridge/team.js",
+          "sha": "1acc29d088d0e44c4e00aad1ab71ccc02e230d54",
+          "previousFilename": null
+        },
+        {
+          "status": "modified",
+          "filename": "dist/hooks/keyword-detector/index.js",
+          "sha": "9814451a0241a26d88dcb1ad69206d6bd7a23706",
+          "previousFilename": null
+        },
+        {
+          "status": "modified",
+          "filename": "dist/hooks/team-dispatch-hook.js",
+          "sha": "303f9426ce1482a6f876063ce22ce8dd379cc385",
+          "previousFilename": null
+        },
+        {
+          "status": "modified",
+          "filename": "dist/notifications/config.js",
+          "sha": "e5260f19f86c34f7f7ec757f9903aefa42e295f5",
+          "previousFilename": null
+        },
+        {
+          "status": "modified",
+          "filename": "dist/team/tmux-session.d.ts",
+          "sha": "55cf35d64919acf565f1f5ce6981d18111985b3c",
+          "previousFilename": null
+        },
+        {
+          "status": "modified",
+          "filename": "dist/team/tmux-session.js",
+          "sha": "f433876384fbd9a0e52be8df2ced1afecd66a46b",
+          "previousFilename": null
+        }
+      ]
+    },
+    {
+      "pullNumber": 4590,
+      "targetRef": "dev",
+      "mergeBaseSha": "23956cd1cbf84f922f59390f4def59dc9911dcfa",
+      "headSha": "b0c2d2259cc9ed2d51b931732097c746e2617b8c",
+      "owner": "Yeachan-Heo",
+      "expiresAt": "2026-11-23T00:00:00.000Z",
+      "generatedDelta": {
+        "count": 9,
+        "sha256": "5e82fe76ae84c87991a76984ee9e4ed2822d693da926dbc3435efc79b4bf981f"
+      },
+      "generatedFiles": [
+        {
+          "status": "modified",
+          "filename": "bridge/claude-md-coordinator.cjs",
+          "sha": "52c369d22676db3ab651fbf92e73d9b7ee76556c",
+          "previousFilename": null
+        },
+        {
+          "status": "modified",
+          "filename": "bridge/cli.cjs",
+          "sha": "84b8efea4cc693745cc29805d71f71473dead444",
+          "previousFilename": null
+        },
+        {
+          "status": "modified",
+          "filename": "bridge/runtime-cli.cjs",
+          "sha": "09982acb12f2a137c9627a5328af54ea72b9a8fa",
+          "previousFilename": null
+        },
+        {
+          "status": "modified",
+          "filename": "bridge/team-mcp.cjs",
+          "sha": "d25dd3db30936c112923bb24072cb3c4fb95ecd7",
+          "previousFilename": null
+        },
+        {
+          "status": "modified",
+          "filename": "bridge/team.js",
+          "sha": "1acc29d088d0e44c4e00aad1ab71ccc02e230d54",
+          "previousFilename": null
+        },
+        {
+          "status": "modified",
+          "filename": "dist/hooks/keyword-detector/index.js",
+          "sha": "9814451a0241a26d88dcb1ad69206d6bd7a23706",
+          "previousFilename": null
+        },
+        {
+          "status": "modified",
+          "filename": "dist/notifications/config.js",
+          "sha": "e5260f19f86c34f7f7ec757f9903aefa42e295f5",
+          "previousFilename": null
+        },
+        {
+          "status": "modified",
+          "filename": "dist/team/tmux-session.d.ts",
+          "sha": "55cf35d64919acf565f1f5ce6981d18111985b3c",
+          "previousFilename": null
+        },
+        {
+          "status": "modified",
+          "filename": "dist/team/tmux-session.js",
+          "sha": "f433876384fbd9a0e52be8df2ced1afecd66a46b",
+          "previousFilename": null
+        }
+      ]
     }
   ]
 }
