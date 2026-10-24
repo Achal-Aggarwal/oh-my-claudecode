@@ -6,14 +6,14 @@
     "base": "05c800f40d1ad53b42a78609d2667ef4f726808b",
     "planningHead": "0a91273e61dbbd47eb0af4c02844409251e08398",
     "head": "3f76a9f19164aea5ac9f5db14286162cd4a876a9",
-    "sourceSha256": "1bbe3a998fd72e29eb27770c27287dcff02a3a867fd8394c31da422d140634d8",
+    "sourceSha256": "61f9d3ef0ae150e062bbd4d888661b9ea5547a49607ec473f045f93c3a120381",
     "generatedAt": null,
     "generator": "scripts/generate-inventory-graph.mjs"
   },
   "base": "05c800f40d1ad53b42a78609d2667ef4f726808b",
   "planningHead": "0a91273e61dbbd47eb0af4c02844409251e08398",
   "head": "3f76a9f19164aea5ac9f5db14286162cd4a876a9",
-  "sourceSha256": "1bbe3a998fd72e29eb27770c27287dcff02a3a867fd8394c31da422d140634d8",
+  "sourceSha256": "61f9d3ef0ae150e062bbd4d888661b9ea5547a49607ec473f045f93c3a120381",
   "counts": {
     "public": {
       "skills": 48,
@@ -28,8 +28,8 @@
       "toolFiles": 65,
       "libFiles": 48,
       "templateHooks": 24,
-      "srcFiles": 1482,
-      "total": 1506
+      "srcFiles": 1483,
+      "total": 1507
     },
     "generated": {
       "distFiles": 5739,
@@ -46192,6 +46192,11 @@
         "path": "src/utils/string-width.ts"
       },
       {
+        "id": "src/utils/url.ts",
+        "kind": "src",
+        "path": "src/utils/url.ts"
+      },
+      {
         "id": "src/utils/user-skill-compat.ts",
         "kind": "src",
         "path": "src/utils/user-skill-compat.ts"
@@ -72614,6 +72619,11 @@
         "kind": "type-imports"
       },
       {
+        "from": "src/hud/elements/git.ts",
+        "to": "src/utils/url.ts",
+        "kind": "imports"
+      },
+      {
         "from": "src/hud/elements/hostname.ts",
         "to": "external:node:os",
         "kind": "imports"
@@ -77782,6 +77792,11 @@
         "from": "src/providers/index.ts",
         "to": "src/providers/types.ts",
         "kind": "type-imports"
+      },
+      {
+        "from": "src/providers/index.ts",
+        "to": "src/utils/url.ts",
+        "kind": "imports"
       },
       {
         "from": "src/ralphthon/__tests__/cli.test.ts",
@@ -89830,12 +89845,12 @@
       }
     ],
     "stats": {
-      "nodeCount": 7889,
-      "edgeCount": 8628,
-      "importEdgeCount": 7185,
+      "nodeCount": 7890,
+      "edgeCount": 8630,
+      "importEdgeCount": 7187,
       "registerEdgeCount": 69
     }
   },
-  "inventorySha256": "7cc2da558a8d75370a2c81a697982e6d56ba7394f94840c44ce14693f474cb1c",
-  "manifestSha256": "e54af5008fb95c436ed9ee28389f30a68cb3b4947c84f6b9c4d703ef71ba435f"
+  "inventorySha256": "92edf7c34a86bf217c226da2e0332a2b3463be77a6520519c5a949154ff9f8b4",
+  "manifestSha256": "ae78980d8b5002b492a337c226d7ba68dc5b656c4b57eb29833d48890eeedefc"
 }
