@@ -35791,6 +35791,82 @@
           "previousFilename": null
         }
       ]
+    },
+    {
+      "pullNumber": 4605,
+      "targetRef": "main",
+      "mergeBaseSha": "5632614b75cc7833f74604be65d26a62a5b773de",
+      "headSha": "f9e4229dc4266d0ca6716d9bb16e93c66ebf28d5",
+      "owner": "Yeachan-Heo",
+      "expiresAt": "2026-11-24T00:00:00.000Z",
+      "generatedDelta": {
+        "count": 4,
+        "sha256": "b607f919ee428647a32e1574fce1ed9d0bb8e7ad9bf57e3674be15a24ade6f5c"
+      },
+      "generatedFiles": [
+        {
+          "status": "modified",
+          "filename": "bridge/claude-md-coordinator.cjs",
+          "sha": "cfe1cba73a8fec98b7ebd5e331e009b6d2eab85e",
+          "previousFilename": null
+        },
+        {
+          "status": "modified",
+          "filename": "bridge/cli.cjs",
+          "sha": "06c988a4ec924cc9280cf2b5f3b71367202b4ccb",
+          "previousFilename": null
+        },
+        {
+          "status": "modified",
+          "filename": "dist/cli/commands/teleport.js",
+          "sha": "48d31a0d2790058157184bde2d7bfa5fd861b49e",
+          "previousFilename": null
+        },
+        {
+          "status": "modified",
+          "filename": "dist/cli/utils/formatting.js",
+          "sha": "087bb4b93b6f3658bf21759ae5373e5b3fced56c",
+          "previousFilename": null
+        }
+      ]
+    },
+    {
+      "pullNumber": 4609,
+      "targetRef": "dev",
+      "mergeBaseSha": "146af74abf00f9794dddcdbb1a3ccf87a0bd8ac3",
+      "headSha": "54c56eca90f371ea9a45952ac616bd2e12efe58d",
+      "owner": "Yeachan-Heo",
+      "expiresAt": "2026-11-24T00:00:00.000Z",
+      "generatedDelta": {
+        "count": 4,
+        "sha256": "b607f919ee428647a32e1574fce1ed9d0bb8e7ad9bf57e3674be15a24ade6f5c"
+      },
+      "generatedFiles": [
+        {
+          "status": "modified",
+          "filename": "bridge/claude-md-coordinator.cjs",
+          "sha": "cfe1cba73a8fec98b7ebd5e331e009b6d2eab85e",
+          "previousFilename": null
+        },
+        {
+          "status": "modified",
+          "filename": "bridge/cli.cjs",
+          "sha": "06c988a4ec924cc9280cf2b5f3b71367202b4ccb",
+          "previousFilename": null
+        },
+        {
+          "status": "modified",
+          "filename": "dist/cli/commands/teleport.js",
+          "sha": "48d31a0d2790058157184bde2d7bfa5fd861b49e",
+          "previousFilename": null
+        },
+        {
+          "status": "modified",
+          "filename": "dist/cli/utils/formatting.js",
+          "sha": "087bb4b93b6f3658bf21759ae5373e5b3fced56c",
+          "previousFilename": null
+        }
+      ]
     }
   ]
 }
