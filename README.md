@@ -667,7 +667,7 @@ Top personal non-fork, non-archived repos from all-time OMC contributors (100+ G
 - [@Yeachan-Heo](https://github.com/Yeachan-Heo) — [oh-my-claudecode](https://github.com/Yeachan-Heo/oh-my-claudecode) (⭐ 40k)
 - [@junhoyeo](https://github.com/junhoyeo) — [tokscale](https://github.com/junhoyeo/tokscale) (⭐ 5.7k)
 - [@psmux](https://github.com/psmux) — [psmux](https://github.com/psmux/psmux) (⭐ 3.7k)
-- [@devswha](https://github.com/devswha) — [ovis](https://github.com/devswha/ovis) (⭐ 1.4k)
+- [@devswha](https://github.com/devswha) — [ovis](https://github.com/devswha/ovis) (⭐ 1.5k)
 - [@MeroZemory](https://github.com/MeroZemory) — [ida-multi-mcp](https://github.com/MeroZemory/ida-multi-mcp) (⭐ 463)
 - [@GeiserX](https://github.com/GeiserX) — [awesome-spain](https://github.com/GeiserX/awesome-spain) (⭐ 361)
 - [@BowTiedSwan](https://github.com/BowTiedSwan) — [buildflow](https://github.com/BowTiedSwan/buildflow) (⭐ 296)

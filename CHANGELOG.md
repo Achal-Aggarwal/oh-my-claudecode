@@ -1,3 +1,27 @@
+# oh-my-claudecode v5.7.15: More reliable timeouts and clearer token counts
+
+## Release Notes
+
+This release stops truncating whole-integer timeout settings in persistent mode and the pre-tool advisory cooldown, displays near-million HUD token counts in millions, and accepts GitHub and GitLab pull request `.diff` and `.patch` URLs. Thanks to @rudycelekli for #4599, #4600, #4601, and #4604.
+
+### Bug Fixes
+
+- **fix(persistent-mode): stop truncating OMC_PERSISTENT_MODE_TIMEOUT_MS** (#4599, @rudycelekli)
+- **fix(pre-tool-enforcer): stop truncating OMC_PRE_TOOL_ADVISORY_COOLDOWN_MS** (#4600, @rudycelekli)
+- **fix(hud): show token counts that round up to 1000k in millions** (#4601, @rudycelekli)
+- **fix(teleport): read pull request patch and diff URLs** (#4604, @rudycelekli)
+
+### Other Changes
+
+- **chore(sync): merge the v5.7.14 main release into dev** (#4596)
+- **ci: authorize generated artifacts for the v5.7.14 main-to-dev sync** (#4597)
+
+### Stats
+
+- **6 PRs merged** | **0 new features** | **4 bug fixes** | **0 security/hardening improvements** | **2 other changes**
+
+---
+
 # oh-my-claudecode v5.7.14: More reliable Stop hooks and leaner team handling
 
 ## Release Notes
