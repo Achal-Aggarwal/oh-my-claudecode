@@ -95267,7 +95267,7 @@ var init_stdin = __esm({
 // src/cli/utils/formatting.ts
 function formatTokenCount(tokens) {
   if (tokens < 1e3) return `${tokens}`;
-  if (tokens < 1e6) return `${(tokens / 1e3).toFixed(1)}k`;
+  if (tokens < 999950) return `${(tokens / 1e3).toFixed(1)}k`;
   return `${(tokens / 1e6).toFixed(2)}M`;
 }
 var colors;
@@ -129011,7 +129011,7 @@ function bootstrapTeleportDependencies(parentRepoRoot, worktreePath, options) {
   return { mode: "install", packageManager };
 }
 function parseRef(ref) {
-  const ghPrUrlMatch = ref.match(/^https?:\/\/[^/]*github\.com\/([^/]+)\/([^/]+)\/pull\/(\d+)(?:\/[^?#]*)?(?:[?#].*)?$/);
+  const ghPrUrlMatch = ref.match(/^https?:\/\/[^/]*github\.com\/([^/]+)\/([^/]+)\/pull\/(\d+)(?:\.(?:diff|patch))?(?:\/[^?#]*)?(?:[?#].*)?$/);
   if (ghPrUrlMatch) {
     return {
       type: "pr",
@@ -129031,7 +129031,7 @@ function parseRef(ref) {
       provider: "github"
     };
   }
-  const glMrUrlMatch = ref.match(/^https?:\/\/[^/]*gitlab[^/]*\/(.+)\/-\/merge_requests\/(\d+)(?:\/[^?#]*)?(?:[?#].*)?$/);
+  const glMrUrlMatch = ref.match(/^https?:\/\/[^/]*gitlab[^/]*\/(.+)\/-\/merge_requests\/(\d+)(?:\.(?:diff|patch))?(?:\/[^?#]*)?(?:[?#].*)?$/);
   if (glMrUrlMatch) {
     const namespaceParts = glMrUrlMatch[1].split("/");
     const repo = namespaceParts.pop();
