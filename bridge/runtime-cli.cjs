@@ -23072,9 +23072,10 @@ async function refreshRuntimeWorkerPaneIds(runtime, teamName, cwd, instanceId) {
 function classifyAllDeadRecoveryEvidence(refresh, workers, hasOutstanding) {
   if (!hasOutstanding) return "clear";
   if (!refresh.allWorkerPaneIdsKnown || refresh.authoritativePaneIds.length === 0 || workers.length !== refresh.authoritativePaneIds.length) return "unknown";
-  if (workers.some((worker) => worker.liveness === "alive")) return "alive";
-  if (workers.some((worker) => worker.liveness === "unknown")) return "unknown";
-  return hasOutstanding && workers.every((worker) => worker.liveness === "dead") ? "all_dead" : "unknown";
+  const liveness = workers.map((worker) => worker.providerLiveness === "alive" || worker.providerLiveness === "dead" ? worker.providerLiveness : worker.liveness);
+  if (liveness.includes("alive")) return "alive";
+  if (liveness.includes("unknown")) return "unknown";
+  return "all_dead";
 }
 function areAllAuthoritativeWorkersDead(refresh, workers) {
   return classifyAllDeadRecoveryEvidence(refresh, workers, true) === "all_dead";
