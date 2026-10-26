@@ -36413,6 +36413,62 @@
           "previousFilename": null
         }
       ]
+    },
+    {
+      "pullNumber": 4623,
+      "targetRef": "dev",
+      "mergeBaseSha": "d98c2a1a9c04ebfbe96cd5e4ea9f748e52fab566",
+      "headSha": "4b8fad54eab7f0a7e2777b0684c014314f7f4ae3",
+      "owner": "Yeachan-Heo",
+      "expiresAt": "2026-11-25T00:00:00.000Z",
+      "generatedDelta": {
+        "count": 7,
+        "sha256": "6012d14ff273f56a51a674ceac94483c8fa99fe0b6e776e97e9b53f1ce7e61e7"
+      },
+      "generatedFiles": [
+        {
+          "status": "modified",
+          "filename": "bridge/claude-md-coordinator.cjs",
+          "sha": "00e1161df64fa2c0f5ec6ef80104543c26eb6386",
+          "previousFilename": null
+        },
+        {
+          "status": "modified",
+          "filename": "bridge/runtime-cli.cjs",
+          "sha": "fd04f702254d165651324a7788b26593b7fec0ed",
+          "previousFilename": null
+        },
+        {
+          "status": "modified",
+          "filename": "dist/team/__tests__/runtime-cli.test.js",
+          "sha": "16d68c697854cc6e67fc0d7a2b97895532841eb9",
+          "previousFilename": null
+        },
+        {
+          "status": "modified",
+          "filename": "dist/team/__tests__/runtime-cli.test.js.map",
+          "sha": "8e91ea57042e6da7d00a18fb9fd24d434489f362",
+          "previousFilename": null
+        },
+        {
+          "status": "modified",
+          "filename": "dist/team/runtime-cli.d.ts.map",
+          "sha": "62bf64853f4ed88e3803ca44426918da81c7c0ef",
+          "previousFilename": null
+        },
+        {
+          "status": "modified",
+          "filename": "dist/team/runtime-cli.js",
+          "sha": "6521f421c63cd59a8561532ff504f0d2b0334de9",
+          "previousFilename": null
+        },
+        {
+          "status": "modified",
+          "filename": "dist/team/runtime-cli.js.map",
+          "sha": "a64ac5f6913aed4ca66f825f2fa2a6a1c2601bd1",
+          "previousFilename": null
+        }
+      ]
     }
   ]
 }
