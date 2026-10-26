@@ -1,28 +1,31 @@
-# oh-my-claudecode v5.7.14: More reliable Stop hooks and leaner team handling
+# oh-my-claudecode v5.7.15: More reliable timeout handling and clearer token counts
 
 ## Release Notes
 
-This release fixes Stop-hook shadow resolver cleanup and removes the unwired team-dispatch implementation. Thanks to @iyoda for #4581 and to @rolldav for reporting #4575.
+This release preserves whole-integer timeout values in persistent mode and pre-tool advisory cooldowns, shows near-million token counts in millions, and accepts GitHub and GitLab pull request diff and patch URLs. Thanks to @rudycelekli for #4599, #4600, #4601, and #4604.
 
 ### Highlights
 
-- **fix: detach shadow Jev resolver for Stop hooks** (#4580, fixes #4575; reported by @rolldav), recording loop-continuation and learner-extraction shadow entries and cleaning up `/tmp` request files.
-- **chore(hooks): remove the unwired team-dispatch hook and generated outputs** (#4581, supersedes #4566; @iyoda)
+- **fix(persistent-mode): stop truncating OMC_PERSISTENT_MODE_TIMEOUT_MS** (#4599, @rudycelekli)
+- **fix(pre-tool-enforcer): stop truncating OMC_PRE_TOOL_ADVISORY_COOLDOWN_MS** (#4600, @rudycelekli)
+- **fix(teleport): read pull request patch and diff URLs** (#4604, @rudycelekli)
+- **fix(hud): show token counts that round up to 1000k in millions** (#4601, @rudycelekli)
 
 ### Bug Fixes
 
-- **fix: detach shadow Jev resolver for Stop hooks** (#4580, fixes #4575; reported by @rolldav), recording loop-continuation and learner-extraction shadow entries and cleaning up `/tmp` request files.
+- **fix(persistent-mode): stop truncating OMC_PERSISTENT_MODE_TIMEOUT_MS** (#4599, @rudycelekli)
+- **fix(pre-tool-enforcer): stop truncating OMC_PRE_TOOL_ADVISORY_COOLDOWN_MS** (#4600, @rudycelekli)
+- **fix(hud): show token counts that round up to 1000k in millions** (#4601, @rudycelekli)
+- **fix(teleport): read pull request patch and diff URLs** (#4604, @rudycelekli)
 
 ### Other Changes
 
-- **chore(hooks): remove the unwired team-dispatch hook and generated outputs** (#4581, supersedes #4566; @iyoda)
-- **ci: authorize generated artifacts for the team-dispatch removal** (#4577, #4582, #4587)
-- **chore(sync): merge the v5.7.13 main release into dev** (#4590)
-- **ci: authorize generated artifacts for the v5.7.13 main-to-dev sync** (#4591)
+- **chore(sync): merge the v5.7.14 main release into dev** (#4596)
+- **ci: authorize generated artifacts for the v5.7.14 main-to-dev sync** (#4597)
 
 ### Stats
 
-- **7 merged PRs** | **1 bug fix** | **6 other changes**
+- **6 PRs merged** | **0 new features** | **4 bug fixes** | **0 security/hardening improvements** | **2 other changes**
 
 ### Install / Update
 
@@ -31,7 +34,7 @@ The npm CLI and the Claude Code marketplace/plugin are separate install tracks, 
 **CLI / runtime:**
 
 ```bash
-npm install -g oh-my-claude-sisyphus@5.7.14
+npm install -g oh-my-claude-sisyphus@5.7.15
 ```
 
 **Claude Code plugin:**
@@ -40,10 +43,10 @@ npm install -g oh-my-claude-sisyphus@5.7.14
 /plugin marketplace update omc
 ```
 
-**Full Changelog**: https://github.com/Yeachan-Heo/oh-my-claudecode/compare/v5.7.13...v5.7.14
+**Full Changelog**: https://github.com/Yeachan-Heo/oh-my-claudecode/compare/v5.7.14...v5.7.15
 
 ## Contributors
 
 Thank you to all contributors who made this release possible!
 
-@rolldav @iyoda @Yeachan-Heo
+@rudycelekli @Yeachan-Heo
