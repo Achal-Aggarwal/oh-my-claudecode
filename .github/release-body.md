@@ -1,26 +1,29 @@
-# oh-my-claudecode v5.7.17: More reliable recovery when providers exit
+# oh-my-claudecode v5.7.16: Clearer change summaries and more reliable team startup
 
 ## Release Notes
 
-This release reaches all-dead recovery when every team worker's provider exits while its tmux pane remains alive, so the job no longer stays running with stuck pending tasks. Thanks to @iyoda for #4618.
+This release preserves the first Git status entry's path in subagent file-change summaries, reports modify/delete paths in team rebase conflict messages, and detects Claude's directory-trust question when it wraps in narrow panes, so workers no longer exit on first launch. Thanks to @rudycelekli for #4607 and #4608, and @iyoda for #4611, which addresses the same symptom as #4123.
 
 ### Highlights
 
-- **fix(team): reach all-dead recovery when every worker's provider exits inside a live pane** (#4618, @iyoda)
+- **fix(omc-orchestrator): keep the first git status entry's path intact in the subagent FILE CHANGES SUMMARY** (#4607, @rudycelekli)
+- **fix(team): report modify/delete paths in rebase conflict messages** (#4608, @rudycelekli)
+- **fix(team): detect Claude's directory-trust dialog when its question wraps in narrow panes** (#4611, fixes #4123; @iyoda)
 
 ### Bug Fixes
 
-- **fix(team): reach all-dead recovery when every worker's provider exits inside a live pane** (#4618, @iyoda)
+- **fix(omc-orchestrator): keep the first git status entry's path intact in the subagent FILE CHANGES SUMMARY** (#4607, @rudycelekli)
+- **fix(team): report modify/delete paths in rebase conflict messages** (#4608, @rudycelekli)
+- **fix(team): detect Claude's directory-trust dialog when its question wraps in narrow panes** (#4611, fixes #4123; @iyoda)
 
 ### Other Changes
 
-- **ci: authorize generated artifacts for an earlier v5.7.16 main-to-dev sync attempt** (#4615)
-- **chore(sync): merge main's v5.7.16 release into dev** (#4616)
-- **ci: authorize generated artifacts for the v5.7.16 main-to-dev sync** (#4617)
+- **chore(sync): merge the v5.7.15 main release into dev** (#4609)
+- **ci: authorize generated artifacts for the v5.7.15 main-to-dev sync** (#4610)
 
 ### Stats
 
-- **4 PRs merged** | **0 new features** | **1 bug fix** | **0 security/hardening improvements** | **3 other changes**
+- **5 PRs merged** | **0 new features** | **3 bug fixes** | **0 security/hardening improvements** | **2 other changes**
 
 ### Install / Update
 
@@ -29,7 +32,7 @@ The npm CLI and the Claude Code marketplace/plugin are separate install tracks, 
 **CLI / runtime:**
 
 ```bash
-npm install -g oh-my-claude-sisyphus@5.7.17
+npm install -g oh-my-claude-sisyphus@5.7.16
 ```
 
 **Claude Code plugin:**
@@ -38,10 +41,10 @@ npm install -g oh-my-claude-sisyphus@5.7.17
 /plugin marketplace update omc
 ```
 
-**Full Changelog**: https://github.com/Yeachan-Heo/oh-my-claudecode/compare/v5.7.16...v5.7.17
+**Full Changelog**: https://github.com/Yeachan-Heo/oh-my-claudecode/compare/v5.7.15...v5.7.16
 
 ## Contributors
 
 Thank you to all contributors who made this release possible!
 
-@iyoda @Yeachan-Heo
+@rudycelekli @iyoda @Yeachan-Heo
