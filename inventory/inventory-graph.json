@@ -5,15 +5,15 @@
   "provenance": {
     "base": "05c800f40d1ad53b42a78609d2667ef4f726808b",
     "planningHead": "0a91273e61dbbd47eb0af4c02844409251e08398",
-    "head": "20d9720f77e8aeb61d2a5eab1d606f6e962499ec",
-    "sourceSha256": "42d4e91006d4856a7d37f29199dd79470792ed6933ee59daf5d17b5babf392b5",
+    "head": "2985d2a46c9cfe61d15883698127f52e8d1ce26a",
+    "sourceSha256": "46583e5988a7b6cc653daa804b03ccc5a088e9ad8578a2f93e8eb281bded525b",
     "generatedAt": null,
     "generator": "scripts/generate-inventory-graph.mjs"
   },
   "base": "05c800f40d1ad53b42a78609d2667ef4f726808b",
   "planningHead": "0a91273e61dbbd47eb0af4c02844409251e08398",
-  "head": "20d9720f77e8aeb61d2a5eab1d606f6e962499ec",
-  "sourceSha256": "42d4e91006d4856a7d37f29199dd79470792ed6933ee59daf5d17b5babf392b5",
+  "head": "2985d2a46c9cfe61d15883698127f52e8d1ce26a",
+  "sourceSha256": "46583e5988a7b6cc653daa804b03ccc5a088e9ad8578a2f93e8eb281bded525b",
   "counts": {
     "public": {
       "skills": 48,
@@ -24,12 +24,12 @@
     },
     "internal": {
       "hookFiles": 333,
-      "featureFiles": 88,
+      "featureFiles": 89,
       "toolFiles": 65,
       "libFiles": 48,
       "templateHooks": 24,
-      "srcFiles": 1483,
-      "total": 1507
+      "srcFiles": 1484,
+      "total": 1508
     },
     "generated": {
       "distFiles": 5729,
@@ -492,6 +492,7 @@
     "featureFiles": [
       "src/features/AGENTS.md",
       "src/features/__tests__/checkpoint.test.ts",
+      "src/features/__tests__/issue-4630-plugin-reconcile.test.ts",
       "src/features/__tests__/jev-model-routing.test.ts",
       "src/features/__tests__/jev-slop-warning.test.ts",
       "src/features/__tests__/magic-keywords.test.ts",
@@ -7068,6 +7069,7 @@
     "featureFiles": [
       "src/features/AGENTS.md",
       "src/features/__tests__/checkpoint.test.ts",
+      "src/features/__tests__/issue-4630-plugin-reconcile.test.ts",
       "src/features/__tests__/jev-model-routing.test.ts",
       "src/features/__tests__/jev-slop-warning.test.ts",
       "src/features/__tests__/magic-keywords.test.ts",
@@ -41011,6 +41013,11 @@
         "path": "src/features/__tests__/checkpoint.test.ts"
       },
       {
+        "id": "src/features/__tests__/issue-4630-plugin-reconcile.test.ts",
+        "kind": "feature",
+        "path": "src/features/__tests__/issue-4630-plugin-reconcile.test.ts"
+      },
+      {
         "id": "src/features/__tests__/jev-model-routing.test.ts",
         "kind": "feature",
         "path": "src/features/__tests__/jev-model-routing.test.ts"
@@ -60635,6 +60642,36 @@
       {
         "from": "src/features/__tests__/checkpoint.test.ts",
         "to": "src/features/checkpoint/index.ts",
+        "kind": "imports"
+      },
+      {
+        "from": "src/features/__tests__/issue-4630-plugin-reconcile.test.ts",
+        "to": "external:fs",
+        "kind": "imports"
+      },
+      {
+        "from": "src/features/__tests__/issue-4630-plugin-reconcile.test.ts",
+        "to": "external:os",
+        "kind": "imports"
+      },
+      {
+        "from": "src/features/__tests__/issue-4630-plugin-reconcile.test.ts",
+        "to": "external:path",
+        "kind": "imports"
+      },
+      {
+        "from": "src/features/__tests__/issue-4630-plugin-reconcile.test.ts",
+        "to": "external:vitest",
+        "kind": "imports"
+      },
+      {
+        "from": "src/features/__tests__/issue-4630-plugin-reconcile.test.ts",
+        "to": "src/features/auto-update.ts",
+        "kind": "imports"
+      },
+      {
+        "from": "src/features/__tests__/issue-4630-plugin-reconcile.test.ts",
+        "to": "src/installer/index.ts",
         "kind": "imports"
       },
       {
@@ -89719,12 +89756,12 @@
       }
     ],
     "stats": {
-      "nodeCount": 7880,
-      "edgeCount": 8618,
-      "importEdgeCount": 7179,
+      "nodeCount": 7881,
+      "edgeCount": 8624,
+      "importEdgeCount": 7185,
       "registerEdgeCount": 69
     }
   },
-  "inventorySha256": "488f7c7e5157d3140da616f61731c5cbacbb8f2588680330adf1eabcfe21d408",
-  "manifestSha256": "0cc0ae72641cd39151cd3f26380ab46683811550dedd361e4cddd47749902a24"
+  "inventorySha256": "9323b8b40909d1b5f0e652d0b6cfd0d7ee3798ec1f20c0375ef358b3d60cabfe",
+  "manifestSha256": "133aedba6b2d38616a42c20a5b32d51efe17e51d239baa76a0160d7ffb656b7f"
 }
