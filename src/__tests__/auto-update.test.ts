@@ -40,6 +40,7 @@ import { install, isProjectScopedPlugin, checkNodeVersion, CLAUDE_CONFIG_DIR } f
 import {
   reconcileUpdateRuntime,
   performUpdate,
+  silentAutoUpdate,
   shouldBlockStandaloneUpdateInCurrentSession,
   syncPluginCache,
   fetchLatestRelease,
@@ -1745,7 +1746,6 @@ describe('auto-update reconciliation', () => {
     expect(mockedExecFileSync).toHaveBeenCalledWith('C:\\Users\\bellman\\AppData\\Roaming\\npm\\omc.cmd', ['update-reconcile'], expect.objectContaining({
       encoding: 'utf-8',
       stdio: 'pipe',
-      timeout: 60000,
       shell: true,
       windowsHide: true,
       env: expect.objectContaining({ OMC_UPDATE_RECONCILE: '1' }),
@@ -1805,6 +1805,96 @@ describe('auto-update reconciliation', () => {
       env: expect.objectContaining({ OMC_UPDATE_RECONCILE: '1' }),
     }));
     expect(mockedWriteFileSync).not.toHaveBeenCalled();
+  });
+
+  describe('update-reconcile child timeout on POSIX', () => {
+    const OMC_PATH = '/usr/local/bin/omc';
+    const TIMEOUT_MESSAGE = `spawnSync ${OMC_PATH} ETIMEDOUT`;
+
+    function arrangeReconcileChild(childDurationMs: number): void {
+      mockPlatform('linux');
+      mockedExistsSync.mockImplementation((path: Parameters<typeof existsSync>[0]) => {
+        const normalized = String(path).replace(/\\/g, '/');
+        return !normalized.endsWith('/plugins/marketplaces/omc');
+      });
+      vi.stubGlobal('fetch', vi.fn().mockResolvedValue({
+        ok: true,
+        json: async () => ({
+          tag_name: 'v4.1.6',
+          name: '4.1.6',
+          published_at: '2026-02-10T00:00:00.000Z',
+          html_url: 'https://example.com/release',
+          body: 'notes',
+          prerelease: false,
+          draft: false,
+        }),
+      }));
+      mockedExecSync.mockImplementation((command: string) => {
+        if (command === 'npm root -g') {
+          return '/usr/lib/node_modules\n';
+        }
+        if (command === 'npm install -g oh-my-claude-sisyphus@latest') {
+          return '';
+        }
+        if (command.startsWith('which omc')) {
+          return `${OMC_PATH}\n`;
+        }
+        throw new Error(`Unexpected execSync command: ${command}`);
+      });
+      mockedExecFileSync.mockImplementation((command: string, args?: readonly string[], options?: { timeout?: number }) => {
+        if (command === OMC_PATH && args?.[0] === 'update-reconcile') {
+          if ((options?.timeout ?? Infinity) < childDurationMs) {
+            throw Object.assign(new Error(TIMEOUT_MESSAGE), { code: 'ETIMEDOUT', signal: 'SIGTERM' });
+          }
+          return '';
+        }
+        throw new Error(`Unexpected execFileSync command: ${command}`);
+      });
+    }
+
+    it('completes the update when update-reconcile takes 99.8 s on a slow disk', async () => {
+      arrangeReconcileChild(99_816);
+
+      const result = await performUpdate({ verbose: false });
+
+      expect(result.success).toBe(true);
+      expect(mockedWriteFileSync).toHaveBeenCalledWith(expect.stringContaining('.omc-version.json'), expect.stringContaining('"version": "4.1.6"'));
+    });
+
+    it.each([
+      { options: {}, command: 'omc update-reconcile --verbose' },
+      { options: { clean: true }, command: 'omc update-reconcile --skip-grace-period --verbose' },
+    ])('names the recovery command when update-reconcile never finishes ($options)', async ({ options, command }) => {
+      arrangeReconcileChild(Infinity);
+
+      const result = await performUpdate({ verbose: false, ...options });
+
+      expect(result.success).toBe(false);
+      expect(result.message).toBe(
+        'Updated to 4.1.6, but runtime reconciliation timed out after 600 seconds. '
+        + `Wait until no "omc update-reconcile" process is running, then run "${command}" to finish runtime reconciliation.`,
+      );
+      expect(result.errors).toEqual([TIMEOUT_MESSAGE]);
+      expect(mockedWriteFileSync).not.toHaveBeenCalledWith(expect.stringContaining('.omc-version.json'), expect.anything());
+    });
+
+    it('bounds the child at 60 s when the unattended silent auto-update runs it', async () => {
+      arrangeReconcileChild(99_816);
+      const readFile = mockedReadFileSync.getMockImplementation()!;
+      mockedReadFileSync.mockImplementation(((path: Parameters<typeof readFileSync>[0], options?: Parameters<typeof readFileSync>[1]) =>
+        String(path).endsWith('.omc-config.json')
+          ? JSON.stringify({ silentAutoUpdate: true })
+          : readFile(path, options)) as typeof readFileSync);
+
+      const result = await silentAutoUpdate();
+
+      expect(result?.success).toBe(false);
+      expect(result?.message).toBe(
+        'Updated to 4.1.6, but runtime reconciliation timed out after 60 seconds. '
+        + 'Wait until no "omc update-reconcile" process is running, then run "omc update-reconcile --verbose" to finish runtime reconciliation.',
+      );
+      expect(mockedWriteFileSync).not.toHaveBeenCalledWith(expect.stringContaining('.omc-version.json'), expect.stringContaining('"version": "4.1.6"'));
+    });
   });
 
   it('uses standalone reconciliation flags outside plugin runtime', () => {
